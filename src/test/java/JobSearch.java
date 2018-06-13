@@ -1,3 +1,4 @@
+import java.time.LocalDateTime;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -33,13 +34,16 @@ public class JobSearch {
 		String count = driver.findElement(By.id("posiCountId")).getText();
 		System.out.println(count);
 		int countResult = Integer.parseInt(count.replaceAll(",", ""));
-		if (countResult>0) {
-			System.out.println("Step PASS:Keyword: "+keyword+" serach returned "+countResult+" results in "+ location);
+		if(countResult > 0) {
+			System.out.println( "Step PASS: Keyword : " + keyword +" search returned " +
+			countResult +" results in " + location);
 		}else {
 			System.out.println( "Step FAIL: Keyword : " + keyword +" search returned " +
 					countResult +" results in " + location);
 		}
 		
+		driver.close();
+		System.out.println("TEST COMPLETED " + LocalDateTime.now() );
 	}
 	
 	
