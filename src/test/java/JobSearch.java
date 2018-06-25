@@ -22,7 +22,7 @@ public class JobSearch {
 		String actualTitle = driver.getTitle();
 		String expected = "Job Search for Technology Professionals | Dice.com";
 		if(actualTitle.equals(expected))
-				System.out.println("passed");
+				System.out.println("PASS");
 		else
 			System.out.println("failed");
 		String keyword = "Java Programmer";
